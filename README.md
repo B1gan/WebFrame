@@ -1,6 +1,4 @@
-好的，我将在 `README.md` 文件中添加对 Node.js 版本的要求，并推荐使用 Node.js 20 及以上版本。以下是更新后的内容：
-
----
+本次运行中主要遇到的情况是1.项目木依赖的缺失导致构建失败，通过npm install安装缺失依赖确保项目正常运行，并利用package-lock.json锁定了依赖版本确保开发环境的一致性；2.环境变量中配置的端口和后端服务地址与项目原有README文件不一致，重新配置了开发和生产环境变量实现了灵活的配置管理。
 
 # Thirdweb 项目
 
@@ -57,6 +55,9 @@ npm run dev
 ```
 开发服务器默认运行在 `http://localhost:3000`，你可以通过访问该地址查看项目运行效果。
 
+![RunDev](src/exampleImage/RunDev.png)
+![WindowLocal](src/exampleImage/WindowLocal.png)
+
 ### 3. 构建生产环境
 运行以下命令构建生产环境代码：
 ```bash
@@ -64,11 +65,16 @@ npm run build
 ```
 构建完成后，生成的文件将位于 `dist` 目录中。
 
+![RunBuild](src/exampleImage/RunBuild.png)
+
 ### 4. 预览构建结果
 运行以下命令预览构建后的生产环境代码：
 ```bash
 npm run preview
 ```
+
+![RunPreview](src/exampleImage/RunPreview.png)
+![WindowPreview](src/exampleImage/WindowPreview.png)
 
 ### 5. 使用环境变量
 项目支持通过 `.env` 文件配置环境变量。你可以在项目根目录下创建 `.env.development` 和 `.env.production` 文件，分别用于开发环境和生产环境的配置。例如：
@@ -94,7 +100,6 @@ VITE_APP_BACKEND_URL=https://api.example.com
 
 ## 许可证
 本项目采用 [MIT 许可证](LICENSE)。
-
 ---
 
 通过明确指出 Node.js 的版本要求，用户可以更清楚地了解项目的运行环境需求，从而避免因版本不兼容导致的问题。如果你还有其他需求或需要进一步调整，请随时告诉我！
